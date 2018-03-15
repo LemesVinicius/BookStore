@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import web.command.ICommand;
-import web.command.AlterarCommand;
+import web.command.UpdateCommand;
 
 import web.command.ConsultarCommand;
 
 import web.command.ExcluirCommand;
-import web.command.SalvarCommand;
+import web.command.SaveCommand;
 import web.command.VisualizarCommand;
 import core.app.Result;
 
@@ -46,11 +46,11 @@ public class Servlet extends HttpServlet {
     	
     	
     	
-    	commands.put("SALVAR", new SalvarCommand());
+    	commands.put("SALVAR", new SaveCommand());
     	commands.put("EXCLUIR", new ExcluirCommand());
     	commands.put("CONSULTAR", new ConsultarCommand());
     	commands.put("VISUALIZAR", new VisualizarCommand());
-    	commands.put("ALTERAR", new AlterarCommand());
+    	commands.put("ALTERAR", new UpdateCommand());
     	
     	
     	

@@ -7,6 +7,6 @@ import core.app.DomainEntity;
 
 public interface ICommand {
 
-	public Result execute(DomainEntity entidade);
+	public Result execute(DomainEntity entity);
 	
 }

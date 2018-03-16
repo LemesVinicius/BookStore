@@ -316,8 +316,8 @@ public class Facade implements IFacade {
 	}
 
 	
-	private String executeLogic(DomainEntity entidade, String operacao){
-		String nmClasse = entidade.getClass().getName();		
+	private String executeLogic(DomainEntity entity, String operacao){
+		String nmClasse = entity.getClass().getName();		
 		StringBuilder msg = new StringBuilder();
 		
 		Map<String, List<IStrategy>> regrasOperacao = rns.get(nmClasse);
@@ -330,7 +330,7 @@ public class Facade implements IFacade {
 			
 			if(regras != null){
 				for(IStrategy s: regras){			
-					String m = s.processar(entidade);			
+					String m = s.process(entity);			
 					
 					if(m != null){
 						msg.append(m);

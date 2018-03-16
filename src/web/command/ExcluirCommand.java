@@ -10,7 +10,7 @@ public class ExcluirCommand extends AbstractCommand{
 	
 	public Result execute(DomainEntity entity) {
 		
-		return facade.excluir(entity);
+		return facade.delete(entity);
 	}
 
 }

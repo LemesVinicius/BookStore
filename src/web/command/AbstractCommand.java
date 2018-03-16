@@ -9,6 +9,6 @@ import core.control.Facade;
 
 public abstract class AbstractCommand implements ICommand {
 
-	protected IFacade fachada = new Facade();
+	protected IFacade facade = new Facade();
 
 }

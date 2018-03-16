@@ -10,7 +10,7 @@ public class ConsultarCommand extends AbstractCommand{
 	
 	public Result execute(DomainEntity entity) {
 		
-		return facade.consultar(entity);
+		return facade.read(entity);
 	}
 
 }

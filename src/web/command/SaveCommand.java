@@ -10,7 +10,7 @@ public class SaveCommand extends AbstractCommand{
 	
 	public Result execute(DomainEntity entity) {
 		
-		return facade.salvar(entity);
+		return facade.save(entity);
 	}
 
 }

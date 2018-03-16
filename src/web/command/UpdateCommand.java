@@ -10,7 +10,7 @@ public class UpdateCommand extends AbstractCommand{
 	
 	public Result execute(DomainEntity entity) {
 		
-		return facade.alterar(entity);
+		return facade.update(entity);
 	}
 
 }

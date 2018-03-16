@@ -183,13 +183,13 @@ public class Facade implements IFacade {
 		if(msg == null){
 			IDAO dao = daos.get(nmClasse);
 			try {
-				dao.salvar(entidade);
-				List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
-				entidades.add(entidade);
-				resultado.setEntidades(entidades);
+				dao.save(entity);
+				List<DomainEntity> entidades = new ArrayList<DomainEntity>();
+				entidades.add(entity);
+				result.setEntidades(entidades);
 			} catch (SQLException e) {
 				e.printStackTrace();
-				resultado.setMsg("N�o foi poss�vel realizar o registro!");
+				result.setMsg("N�o foi poss�vel realizar o registro!");
 				
 			}
 		}else{
@@ -202,18 +202,18 @@ public class Facade implements IFacade {
 	}
 
 	@Override
-	public Result update(DomainEntity entidade) {
+	public Result update(DomainEntity entity) {
 		result = new Result();
-		String nmClasse = entidade.getClass().getName();	
+		String nmClasse = entity.getClass().getName();	
 		
-		String msg = executeLogic(entidade, "ALTERAR");
+		String msg = executeLogic(entity, "ALTERAR");
 	
 		if(msg == null){
 			IDAO dao = daos.get(nmClasse);
 			try {
-				dao.alterar(entidade);
-				List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
-				entidades.add(entidade);
+				dao.update(entity);
+				List<DomainEntity> entidades = new ArrayList<DomainEntity>();
+				entidades.add(entity);
 				result.setEntidades(entidades);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -231,19 +231,19 @@ public class Facade implements IFacade {
 	}
 
 	@Override
-	public Result delete(DomainEntity entidade) {
+	public Result delete(DomainEntity entity) {
 		result = new Result();
-		String nmClasse = entidade.getClass().getName();	
+		String nmClasse = entity.getClass().getName();	
 		
-		String msg = executeLogic(entidade, "EXCLUIR");
+		String msg = executeLogic(entity, "EXCLUIR");
 		
 		
 		if(msg == null){
 			IDAO dao = daos.get(nmClasse);
 			try {
-				dao.excluir(entidade);
-				List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
-				entidades.add(entidade);
+				dao.delete(entity);
+				List<DomainEntity> entidades = new ArrayList<DomainEntity>();
+				entidades.add(entity);
 				result.setEntidades(entidades);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -261,17 +261,17 @@ public class Facade implements IFacade {
 	}
 
 	@Override
-	public Result read(DomainEntity entidade) {
+	public Result read(DomainEntity entity) {
 		result = new Result();
-		String nmClasse = entidade.getClass().getName();	
+		String nmClasse = entity.getClass().getName();	
 		
-		String msg = executeLogic(entidade, "EXCLUIR");
+		String msg = executeLogic(entity, "EXCLUIR");
 				
 		if(msg == null){
 			IDAO dao = daos.get(nmClasse);
 			try {
 				
-				result.setEntidades(dao.consultar(entidade));
+				result.setEntidades(dao.read(entity));
 					
 				
 			} catch (SQLException e) {
@@ -289,17 +289,17 @@ public class Facade implements IFacade {
 	}
 	
 	@Override
-	public Result visualizar(DomainEntity entidade) {
+	public Result visualizar(DomainEntity entity) {
 		result = new Result();
-		String nmClasse = entidade.getClass().getName();	
+		String nmClasse = entity.getClass().getName();	
 		
-		String msg = executeLogic(entidade, "EXCLUIR");
+		String msg = executeLogic(entity, "EXCLUIR");
 				
 		if(msg == null){
 			IDAO dao = daos.get(nmClasse);
 			try {
 				
-				resultado.setEntidades(dao.consultar(entidade));
+				result.setEntidades(dao.read(entity));
 				
 				
 			} catch (SQLException e) {

@@ -2,13 +2,13 @@
 package web.command;
 
 import web.command.ICommand;
-import core.control.IFachada;
-import core.control.Fachada;
+import core.control.IFacade;
+import core.control.Facade;
 
 
 
 public abstract class AbstractCommand implements ICommand {
 
-	protected IFachada fachada = new Fachada();
+	protected IFacade fachada = new Facade();
 
 }

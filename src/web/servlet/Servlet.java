@@ -19,6 +19,7 @@ import web.command.ConsultarCommand;
 import web.command.ExcluirCommand;
 import web.command.SaveCommand;
 import web.command.VisualizarCommand;
+import core.app.DomainEntity;
 import core.app.Result;
 
 import core.domain.*;
@@ -62,7 +63,8 @@ public class Servlet extends HttpServlet {
     	/*A chave do mapa � o mapeamento da servlet para cada form que 
     	 * est� configurado no web.xml e sendo utilizada no action do html
     	 */
-    	vhs.put("/bookstore/book", new LivroViewHelper());
+    	
+    	//vhs.put("/bookstore/book", new LivroViewHelper());
     	
     }
     
@@ -105,7 +107,7 @@ public class Servlet extends HttpServlet {
 		
 		//O viewhelper retorna a entidade especifica para a tela que chamou esta servlet
 		
-		EntidadeDominio entidade =  vh.getEntidade(request);
+		DomainEntity entidade =  vh.getEntidade(request);
 
 		Result resultado = null;
 		

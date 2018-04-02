@@ -34,14 +34,14 @@ public class Facade implements IFacade {
 		
 		rns = new HashMap<String, Map<String, List<IStrategy>>>();
 			
-		AutorDAO autDAO = new AutorDAO(null,null);
-		BandeiraCardDAO bcDAO = new BandeiraCardDAO(null ,null);
+		AuthorDAO autDAO = new AuthorDAO(null,null);
+		CardTypeDAO bcDAO = new CardTypeDAO(null ,null);
 		CardDAO carddao = new CardDAO("tcard","id");
-		CategoriaDAO catDAO = new CategoriaDAO(null, null);
-		CidadeDAO cDAO = new CidadeDAO(null, null);
-		ClienteDAO cliDAO = new ClienteDAO(null, null);
-		CupomPromoDAO cupromoDAO = new CupomPromoDAO(null,null);
-		CupomTrocaDAO cuptrocadao = new CupomTrocaDAO(null, null);
+		CategoryDAO catDAO = new CategoryDAO(null, null);
+		CityDAO cDAO = new CityDAO(null, null);
+		ClientDAO cliDAO = new ClientDAO(null, null);
+		OfferCouponDAO cupromoDAO = new OfferCouponDAO(null,null);
+		ExchangeCouponDAO cuptrocadao = new ExchangeCouponDAO(null, null);
 		EditoraDAO edtDAO = new EditoraDAO(null,null);
 		EnderecoDAO enddao = new EnderecoDAO("tend","id");
 		EstadoDAO eDAO = new EstadoDAO(null, null);
